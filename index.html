@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L&amp;K Homestay — Ujjain</title>
+<meta name="description" content="A full two-bedroom home in the heart of Ujjain, run by brothers Lav and Kush. Message on WhatsApp or call to book — no app, no login.">
+<meta property="og:title" content="L&amp;K Homestay, Ujjain">
+<meta property="og:description" content="A home two minutes from Mahakal. Entire 2BHK, sleeps 6. Message on WhatsApp or call to book.">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛕</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #F2EEE5;
+    --surface: #FFFFFF;
+    --surface-2: #E8E0D0;
+    --ink: #26191B;
+    --ink-soft: #5B4C46;
+    --maroon: #7C1F2B;
+    --maroon-strong: #5C141D;
+    --marigold: #B96A16;
+    --brass: #8C6A22;
+    --dusk: #1C2740;
+    --dusk-ink: #F4EFE4;
+    --line: rgba(38,25,27,0.14);
+    --whatsapp: #3E8E5C;
+    --airbnb: #B0264B;
+    --mmt: #EE5A1E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16100F;
+      --surface: #1F1615;
+      --surface-2: #291D1B;
+      --ink: #F3ECE2;
+      --ink-soft: #C8B9AE;
+      --maroon: #E0596B;
+      --maroon-strong: #EE7889;
+      --marigold: #EFA84B;
+      --brass: #C9A227;
+      --dusk: #0E1626;
+      --dusk-ink: #F4EFE4;
+      --line: rgba(243,236,226,0.16);
+      --whatsapp: #55B57C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16100F;
+    --surface: #1F1615;
+    --surface-2: #291D1B;
+    --ink: #F3ECE2;
+    --ink-soft: #C8B9AE;
+    --maroon: #E0596B;
+    --maroon-strong: #EE7889;
+    --marigold: #EFA84B;
+    --brass: #C9A227;
+    --dusk: #0E1626;
+    --dusk-ink: #F4EFE4;
+    --line: rgba(243,236,226,0.16);
+    --whatsapp: #55B57C;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; text-wrap: balance; margin: 0; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    color: var(--marigold);
+    font-weight: 500;
+  }
+  .eyebrow.on-dusk { color: var(--brass); }
+
+  a { color: inherit; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 48px);
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; padding-bottom: 14px; gap: 12px;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+  }
+  .brand em { font-style: italic; color: var(--maroon); }
+  .topbar nav { display: flex; gap: 10px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 10px 18px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+  .btn-call {
+    background: var(--maroon); color: #FBF6EE;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  }
+  .btn-call:hover { background: var(--maroon-strong); }
+  .btn-wa {
+    background: var(--whatsapp); color: #fff;
+  }
+  .btn-wa:hover { filter: brightness(1.08); }
+  .btn-ghost {
+    background: transparent; border-color: var(--line); color: var(--ink);
+  }
+  .btn svg { width: 16px; height: 16px; flex: none; }
+  .btn.wrap-text { white-space: normal; text-align: center; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    min-height: min(94vh, 820px);
+    display: flex; align-items: flex-end;
+    color: var(--dusk-ink);
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .hero .frame { position: absolute; inset: 0; z-index: -2; }
+  .hero .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(14,22,38,0.35) 0%, rgba(14,22,38,0.28) 30%, rgba(14,22,38,0.72) 78%, rgba(14,22,38,0.92) 100%);
+  }
+  .hero-inner {
+    padding: clamp(90px, 16vw, 150px) 0 clamp(40px, 6vw, 64px);
+    width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.06em;
+    background: rgba(244,239,228,0.12);
+    border: 1px solid rgba(244,239,228,0.35);
+    padding: 6px 12px; border-radius: 100px;
+    margin-bottom: 22px;
+  }
+  .hero-badge b { color: var(--brass); font-weight: 600; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-weight: 600;
+    line-height: 1.03;
+    max-width: 14ch;
+  }
+  .hero h1 em { font-style: italic; font-weight: 500; color: #E9C482; }
+  .hero p.lede {
+    margin-top: 20px;
+    max-width: 46ch;
+    font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+    color: rgba(244,239,228,0.88);
+  }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .hero-ctas .btn { padding: 13px 24px; font-size: 0.95rem; }
+  .hero-ctas .btn-ghost { background: rgba(244,239,228,0.08); border-color: rgba(244,239,228,0.4); color: var(--dusk-ink); }
+
+  .hero-meta {
+    margin-top: 46px;
+    display: flex; gap: clamp(18px,4vw,44px); flex-wrap: wrap;
+    padding-top: 22px; border-top: 1px solid rgba(244,239,228,0.22);
+  }
+  .hero-meta .stat b {
+    display: block; font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 1.5rem; font-variant-numeric: tabular-nums;
+  }
+  .hero-meta .stat span {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.1em; color: rgba(244,239,228,0.65);
+  }
+
+  /* ---------- section shell ---------- */
+  section { padding: clamp(64px, 9vw, 104px) 0; }
+  .band-dusk { background: var(--dusk); color: var(--dusk-ink); }
+  .band-stone { background: var(--surface-2); }
+
+  .section-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap; margin-bottom: 42px;
+  }
+  .section-head h2 { font-size: clamp(1.6rem, 3.4vw, 2.5rem); font-weight: 600; max-width: 18ch; }
+  .section-head p { max-width: 42ch; color: var(--ink-soft); font-size: 0.98rem; }
+  .band-dusk .section-head p { color: rgba(244,239,228,0.7); }
+
+  /* ---------- welcome / twin intro ---------- */
+  .intro-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px);
+    align-items: start;
+  }
+  .intro-grid > *, .room-pair > *, .loc-grid > *, .platform-grid > * { min-width: 0; }
+  .intro-grid .lede-col p { font-size: clamp(1.02rem, 1.6vw, 1.25rem); font-family: 'Fraunces', serif; font-weight: 400; line-height: 1.5; color: var(--ink); }
+  .intro-grid .lede-col p + p { margin-top: 1.1em; }
+  .twin-note {
+    margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .twin-glyph {
+    flex: none; width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--brass); display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-style: italic; color: var(--maroon); font-size: 1rem;
+  }
+  .twin-note p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
+  .twin-note b { color: var(--ink); font-weight: 600; }
+
+  .facts-col { display: grid; gap: 14px; align-content: start; }
+  .fact-row {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 16px 0; border-bottom: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.86rem;
+  }
+  .fact-row span:first-child { color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; padding-top: 3px; }
+  .fact-row span:last-child { text-align: right; font-weight: 500; }
+
+  /* ---------- gallery ---------- */
+  .filmstrip {
+    display: grid; grid-auto-flow: column; grid-auto-columns: min(78vw, 340px);
+    gap: 14px; overflow-x: auto; padding-bottom: 14px; scroll-snap-type: x mandatory;
+    padding-left: clamp(20px,5vw,48px); padding-right: clamp(20px,5vw,48px);
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filmstrip .frame {
+    scroll-snap-align: start; position: relative; border-radius: 2px; overflow: hidden;
+    aspect-ratio: 4/5; background: var(--surface-2);
+  }
+  .filmstrip .frame:nth-child(3n+2) { aspect-ratio: 4/3; align-self: center; }
+  .filmstrip .frame figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 10px 12px 8px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em;
+    text-transform: uppercase; color: #F4EFE4;
+    background: linear-gradient(180deg, transparent, rgba(14,10,9,0.75));
+  }
+  figure { margin: 0; }
+
+  /* ---------- amenities ---------- */
+  .amenity-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line);
+  }
+  .amenity {
+    background: var(--bg); padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start;
+    min-width: 0;
+  }
+  .amenity svg { flex: none; width: 20px; height: 20px; color: var(--maroon); margin-top: 2px; }
+  .amenity span { font-size: 0.92rem; min-width: 0; overflow-wrap: break-word; }
+
+  /* ---------- rooms ---------- */
+  .room-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,40px); }
+  .room-card .frame { aspect-ratio: 5/4; border-radius: 2px; overflow: hidden; margin-bottom: 18px; }
+  .room-card .eyebrow { display: block; margin-bottom: 6px; }
+  .room-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
+  .room-card p { color: var(--ink-soft); font-size: 0.92rem; max-width: 40ch; margin: 0; }
+
+  /* ---------- location ---------- */
+  .loc-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px,5vw,64px); align-items: center; }
+  .loc-copy p { color: rgba(244,239,228,0.82); font-size: 1.02rem; max-width: 46ch; margin: 0; }
+  .loc-copy p + p { margin-top: 1em; }
+  .loc-list { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 12px; }
+  .loc-list li { display: flex; gap: 12px; align-items: baseline; font-size: 0.95rem; }
+  .loc-list li::before { content: "—"; color: var(--brass); flex: none; }
+  .addr-card {
+    background: rgba(244,239,228,0.06); border: 1px solid rgba(244,239,228,0.2);
+    padding: 30px; border-radius: 2px;
+  }
+  .addr-card .eyebrow { margin-bottom: 14px; display: block; }
+  .addr-card address { font-style: normal; font-family: 'Fraunces', serif; font-size: 1.2rem; line-height: 1.5; margin: 0 0 22px; }
+  .addr-card .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+
+  /* ---------- how to book ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(20px,4vw,32px); }
+  .step { padding-top: 22px; border-top: 2px solid var(--brass); }
+  .step .num { font-family: 'IBM Plex Mono', monospace; color: var(--marigold); font-size: 0.85rem; display: block; margin-bottom: 14px; }
+  .step h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+  .step p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- platform booking cards ---------- */
+  .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .platform-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
+    padding: 26px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .platform-mark {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem;
+  }
+  .platform-mark .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .platform-card p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); flex: 1; }
+  .platform-card .btn { justify-content: center; }
+  .direct-note {
+    margin-top: 28px; display: flex; gap: 12px; align-items: flex-start;
+    padding: 18px 20px; border: 1px dashed var(--line); border-radius: 3px;
+  }
+  .direct-note svg { flex: none; width: 20px; height: 20px; color: var(--marigold); margin-top: 2px; }
+  .direct-note p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); }
+  .direct-note b { color: var(--ink); }
+
+  /* ---------- trust strip ---------- */
+  .trust-strip { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .trust-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--line); border-radius: 100px;
+    padding: 8px 16px; font-size: 0.84rem; text-decoration: none; color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+  }
+  .trust-chip:hover { border-color: var(--brass); }
+  .trust-chip b { color: var(--maroon); }
+
+  /* ---------- final cta ---------- */
+  .final-cta { text-align: center; }
+  .final-cta h2 { font-size: clamp(2rem,5vw,3.2rem); max-width: 16ch; margin: 0 auto; }
+  .final-cta .btn { padding: 15px 30px; font-size: 1rem; }
+  .final-cta .cta-row { display: flex; justify-content: center; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+  /* ---------- footer ---------- */
+  footer { padding: 40px 0 40px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  footer .brand { font-size: 1rem; }
+  footer p { font-size: 0.82rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---------- sticky mobile cta ---------- */
+  .mobile-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: none; gap: 1px; background: var(--line);
+    border-top: 1px solid var(--line);
+  }
+  .mobile-cta a {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 15px 10px; font-weight: 600; font-size: 0.92rem; text-decoration: none;
+  }
+  .mobile-cta a.call { background: var(--maroon); color: #fff; }
+  .mobile-cta a.wa { background: var(--whatsapp); color: #fff; }
+  .mobile-cta svg { width: 17px; height: 17px; }
+
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  [data-reveal].is-in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .platform-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 860px) {
+    .intro-grid, .room-pair, .loc-grid { grid-template-columns: 1fr; }
+    .amenity-grid { grid-template-columns: repeat(2,1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .platform-grid { grid-template-columns: 1fr; }
+    .topbar nav .btn-ghost { display: none; }
+    .mobile-cta { display: flex; }
+    footer { padding-bottom: 96px; }
+  }
+  @media (max-width: 560px) {
+    .amenity-grid { grid-template-columns: 1fr 1fr; }
+    .hero-meta { gap: 20px; }
+  }
+  @media (max-width: 360px) {
+    .topbar .wrap { padding-top: 11px; padding-bottom: 11px; }
+    .brand { font-size: 1rem; }
+    .topbar nav { gap: 6px; }
+    .topbar .btn { padding: 8px 12px; font-size: 0.8rem; gap: 5px; }
+    .topbar .btn svg { width: 14px; height: 14px; }
+    .hero-badge { font-size: 0.66rem; padding: 6px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">L&amp;K <em>Homestay</em></div>
+    <nav>
+      <a class="btn btn-ghost" href="#stay">The stay</a>
+      <a class="btn btn-wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-call" href="tel:+918770549040">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="frame"><img src="images/hero.jpg" alt="L&amp;K Homestay exterior, Ujjain" width="1200" height="900"></div>
+  <div class="wrap hero-inner">
+    <span class="hero-badge">★ 5.0 <b>&middot; Guest Favorite</b> &middot; 8 reviews on Airbnb</span>
+    <h1>A home to return to, <em>two minutes</em> from Mahakal.</h1>
+    <p class="lede">L&amp;K Homestay is a full two-bedroom home in the heart of Ujjain, run in person by brothers Lav and Kush &mdash; built for families and Mahakal Darshan pilgrims who want a quiet, comfortable base rather than a hotel room.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
+        Message on WhatsApp
+      </a>
+      <a class="btn btn-call" href="tel:+918770549040">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        87705 49040
+      </a>
+      <a class="btn btn-ghost" href="#stay">See the space &darr;</a>
+    </div>
+    <div class="hero-meta">
+      <div class="stat"><b>2</b><span>Bedrooms</span></div>
+      <div class="stat"><b>3</b><span>Bathrooms</span></div>
+      <div class="stat"><b>6</b><span>Guests</span></div>
+      <div class="stat"><b>Entire</b><span>Home, not shared</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="stay">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="lede-col" data-reveal>
+        <span class="eyebrow">The homestay</span>
+        <p style="margin-top:14px;">Bring the whole family. At L&amp;K Homestay our goal is simple &mdash; make every guest feel at home. Clean, spacious air-conditioned rooms, contemporary bathrooms, a fully equipped kitchen, and a peaceful atmosphere in the heart of Ujjain.</p>
+        <p>Whether you're here for Mahakal Darshan or exploring the city, Lav and Kush are on hand to make the stay comfortable and easy &mdash; not a booking engine, just two brothers who answer the phone.</p>
+        <div class="twin-note">
+          <div class="twin-glyph">L&amp;K</div>
+          <p><b>Named for the two of them.</b> Lav and Kush run the home together, day to day &mdash; the same way they'd want you to feel: looked after, not managed.</p>
+        </div>
+      </div>
+      <div class="facts-col" data-reveal>
+        <div class="fact-row"><span>Property type</span><span>Entire rental home</span></div>
+        <div class="fact-row"><span>Layout</span><span>2 bedrooms &middot; 2 beds</span></div>
+        <div class="fact-row"><span>Bathrooms</span><span>3 full bathrooms</span></div>
+        <div class="fact-row"><span>Sleeps</span><span>Up to 6 guests</span></div>
+        <div class="fact-row"><span>Kitchen</span><span>Fully equipped</span></div>
+        <div class="fact-row"><span>Cooling</span><span>Air conditioning, all rooms</span></div>
+        <div class="fact-row"><span>Parking</span><span>Free, on premises</span></div>
+        <div class="fact-row"><span>Rates</span><span>Message for current rates</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-stone">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Every room, before you arrive.</h2>
+      <p>The living room, the kitchen, both bedrooms, the balcony &mdash; a real look at the home you'll be staying in.</p>
+    </div>
+  </div>
+  <div class="filmstrip" data-reveal>
+    <figure class="frame"><img src="images/living1.jpg" alt="Living room seating area" loading="lazy"><figcaption>Living room</figcaption></figure>
+    <figure class="frame"><img src="images/bedroom1a.jpg" alt="Primary bedroom" loading="lazy"><figcaption>Bedroom &middot; one</figcaption></figure>
+    <figure class="frame"><img src="images/kitchen.jpg" alt="Fully equipped kitchen" loading="lazy"><figcaption>Kitchen</figcaption></figure>
+    <figure class="frame"><img src="images/living2.jpg" alt="Living room, second angle" loading="lazy"><figcaption>Living room</figcaption></figure>
+    <figure class="frame"><img src="images/bedroom2a.jpg" alt="Second bedroom" loading="lazy"><figcaption>Bedroom &middot; two</figcaption></figure>
+    <figure class="frame"><img src="images/bath1.jpg" alt="Contemporary bathroom" loading="lazy"><figcaption>Bathroom</figcaption></figure>
+    <figure class="frame"><img src="images/balcony1.jpg" alt="Balcony" loading="lazy"><figcaption>Balcony</figcaption></figure>
+    <figure class="frame"><img src="images/exterior1.jpg" alt="Building exterior" loading="lazy"><figcaption>Exterior</figcaption></figure>
+    <figure class="frame"><img src="images/living3.jpg" alt="Living room, third angle" loading="lazy"><figcaption>Living room</figcaption></figure>
+    <figure class="frame"><img src="images/bath2.jpg" alt="Second bathroom" loading="lazy"><figcaption>Bathroom</figcaption></figure>
+    <figure class="frame"><img src="images/balcony2.jpg" alt="Balcony, second angle" loading="lazy"><figcaption>Balcony</figcaption></figure>
+    <figure class="frame"><img src="images/exterior2.jpg" alt="Building exterior, second angle" loading="lazy"><figcaption>Exterior</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Two bedrooms, done properly.</h2>
+      <p>Room-darkening blinds for the early Bhasma Aarti risers, fresh linen, extra pillows on request.</p>
+    </div>
+    <div class="room-pair">
+      <div class="room-card" data-reveal>
+        <div class="frame"><img src="images/bedroom1b.jpg" alt="Bedroom one" loading="lazy"></div>
+        <span class="eyebrow">Bedroom &middot; 01</span>
+        <h3>The quiet room</h3>
+        <p>A double bed, blackout blinds and an en-suite bathroom &mdash; set back from the street for guests who want an early night before dawn Darshan.</p>
+      </div>
+      <div class="room-card" data-reveal>
+        <div class="frame"><img src="images/bedroom2b.jpg" alt="Bedroom two" loading="lazy"></div>
+        <span class="eyebrow">Bedroom &middot; 02</span>
+        <h3>The family room</h3>
+        <p>Bright and airy with its own bathroom close by &mdash; comfortably fits the rest of the family or a second couple travelling together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-stone">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>What's included, no surprises.</h2>
+      <p>Everything you'd pack for is already here.</p>
+    </div>
+    <div class="amenity-grid" data-reveal>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="1.5"/><path d="M3 9h18M8 4v14"/></svg><span>Fully equipped kitchen</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12.5a9 9 0 0 1 14 0M8 15.8a5 5 0 0 1 8 0M12 19h.01"/></svg><span>Free WiFi throughout</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1.5"/><circle cx="8" cy="12" r="2"/></svg><span>Free parking on premises</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9V6a4 4 0 0 1 8 0v3M4 9h16v11H4z"/></svg><span>Air conditioning, every room</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="15" height="10" rx="1"/><path d="M17 10l5-2v8l-5-2z"/></svg><span>HDTV in the living room</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 21v-4h6v4"/></svg><span>Lift access</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-5 8 5v12"/><path d="M4 12h16"/></svg><span>Private balcony</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span>Full-time caretaker on call</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg><span>24/7 hot water</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-dusk" id="location">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="loc-copy" data-reveal>
+        <span class="eyebrow on-dusk">Where you'll stay</span>
+        <h2 style="margin-top:14px; color:var(--dusk-ink);">In the heart of Ujjain, close to the Jyotirlinga.</h2>
+        <p style="margin-top:18px;">Ujjain is one of India's oldest cities and home to the Mahakaleshwar Jyotirlinga &mdash; one of the twelve Jyotirlingas in the country, and the reason most guests come here. L&amp;K Homestay sits in Sunrise City, a residential pocket a short ride from the temple, the newly built Mahakal Lok corridor, and the ghats along the Kshipra river.</p>
+        <ul class="loc-list">
+          <li>A short ride to Mahakaleshwar Temple &amp; Mahakal Lok</li>
+          <li>Close to the Kshipra river ghats</li>
+          <li>Quiet residential lane, easy for pre-dawn Bhasma Aarti starts</li>
+          <li>Local auto &amp; cab stands nearby for onward travel</li>
+        </ul>
+      </div>
+      <div class="addr-card" data-reveal>
+        <span class="eyebrow on-dusk">Address</span>
+        <address>L&amp;K Homestay<br>Sunrise City, 55<br>Behind Anjushree Hotel<br>Ujjain, Madhya Pradesh 456010</address>
+        <a class="btn btn-call" href="https://www.google.com/maps/search/?api=1&query=L%26K+Homestay+Sunrise+City+55+Behind+Anjushree+Hotel+Ujjain+Madhya+Pradesh+456010" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn-wa wrap-text" href="https://wa.me/918770549040?text=Hi%2C%20could%20you%20share%20directions%20to%20L%26K%20Homestay%3F" target="_blank" rel="noopener">Directions on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Booking is a phone call, not a form.</h2>
+      <p>No app, no login &mdash; just message or call and Lav or Kush will confirm the same day.</p>
+    </div>
+    <div class="steps" data-reveal>
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Message or call</h3>
+        <p>Send your dates and the number of guests on WhatsApp, or call directly &mdash; whichever's easier.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>We confirm your stay</h3>
+        <p>Lav or Kush will confirm availability and the rate for your dates, and hold the home for you.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Arrive, settle in</h3>
+        <p>Someone will be there to let you in and show you around &mdash; and stays reachable for anything you need during your trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-stone" id="book-a-platform">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Prefer to book through a platform?</h2>
+      <p>Same home, same hosts, independent reviews &mdash; book directly on Airbnb or MakeMyTrip if that's easier for you.</p>
+    </div>
+    <div class="platform-grid" data-reveal>
+      <div class="platform-card">
+        <span class="platform-mark"><span class="dot" style="background:var(--airbnb);"></span>Airbnb</span>
+        <p>★ 5.0 rating &middot; 8 reviews &middot; Guest Favorite. Book with Airbnb's own protections and cancellation policy.</p>
+        <a class="btn btn-ghost" href="https://www.airbnb.co.in/rooms/1720204935359673764" target="_blank" rel="noopener">Book on Airbnb</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-mark"><span class="dot" style="background:var(--mmt);"></span>MakeMyTrip</span>
+        <p>Pay in rupees with familiar checkout, EMI options and MMT support if you already book your travel there.</p>
+        <a class="btn btn-ghost" href="https://www.makemytrip.com/hotels/l_k_homestay-details-ujjain.html" target="_blank" rel="noopener">Book on MakeMyTrip</a>
+      </div>
+      <div class="platform-card">
+        <span class="platform-mark"><span class="dot" style="background:var(--brass);"></span>Google Hotels</span>
+        <p>Compare rates across platforms in one place before you decide where to book.</p>
+        <a class="btn btn-ghost" href="https://www.google.com/travel/hotels/s/VKoEu4MNJdaB7Qmx5" target="_blank" rel="noopener">View on Google</a>
+      </div>
+    </div>
+    <div class="direct-note" data-reveal>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <p><b>Booking direct usually works out best.</b> No platform commission, and Lav &amp; Kush can often flex dates or rates that an app can't &mdash; message on WhatsApp or call first if you can.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-stone">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Also findable, in case you'd rather look us up.</h2>
+      <p>Same home, same hosts &mdash; listed on the platforms above with independent reviews.</p>
+    </div>
+    <div class="trust-strip" data-reveal>
+      <a class="trust-chip" href="https://www.airbnb.co.in/rooms/1720204935359673764" target="_blank" rel="noopener"><b>★ 5.0</b> on Airbnb &middot; 8 reviews</a>
+      <a class="trust-chip" href="https://www.makemytrip.com/hotels/l_k_homestay-details-ujjain.html" target="_blank" rel="noopener">Listed on MakeMyTrip</a>
+      <a class="trust-chip" href="https://www.google.com/travel/hotels/s/VKoEu4MNJdaB7Qmx5" target="_blank" rel="noopener">Find us on Google Hotels</a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Ready when you are</span>
+    <h2 style="margin-top:14px;">Message Lav &amp; Kush directly.</h2>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
+        WhatsApp: 87705 49040
+      </a>
+      <a class="btn btn-call" href="tel:+918770549040">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call: 87705 49040
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">L&amp;K <em>Homestay</em></div>
+      <p style="margin-top:6px;">Sunrise City, 55, Behind Anjushree Hotel, Ujjain, MP 456010</p>
+    </div>
+    <p>Hosted by Lav &amp; Kush &middot; Ujjain, Madhya Pradesh</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="call" href="tel:+918770549040">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a class="wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
