@@ -351,6 +351,30 @@
   .addr-card address { font-style: normal; font-family: 'Fraunces', serif; font-size: 1.2rem; line-height: 1.5; margin: 0 0 22px; }
   .addr-card .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
 
+  /* ---------- local conveniences ---------- */
+  .local-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,40px); }
+  .local-grid > * { min-width: 0; }
+  .local-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
+    padding: 28px;
+  }
+  .local-card .eyebrow { display: block; margin-bottom: 10px; }
+  .local-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 18px; }
+  .chip-list {
+    list-style: none; margin: 0 0 18px; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .chip-list li {
+    border: 1px solid var(--line); border-radius: 100px;
+    padding: 6px 14px; font-size: 0.85rem; font-weight: 500;
+  }
+  .chip-list li em {
+    font-style: normal; color: var(--marigold); font-size: 0.78rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .local-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+  .local-card p b { color: var(--ink); font-weight: 600; }
+
   /* ---------- how to book ---------- */
   .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(20px,4vw,32px); }
   .step { padding-top: 22px; border-top: 2px solid var(--brass); }
@@ -406,7 +430,7 @@
   [data-reveal].is-in { opacity: 1; transform: none; }
 
   @media (max-width: 860px) {
-    .intro-grid, .room-pair, .loc-grid { grid-template-columns: 1fr; }
+    .intro-grid, .room-pair, .loc-grid, .local-grid { grid-template-columns: 1fr; }
     .amenity-grid { grid-template-columns: repeat(2,1fr); }
     .steps { grid-template-columns: 1fr; }
     .platform-grid { grid-template-columns: 1fr; }
@@ -620,6 +644,38 @@
         title="Map showing L&amp;K Homestay, Sunrise City, Ujjain"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="band-stone">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Everything you need, already close by.</h2>
+      <p>You're in a real neighbourhood, not a tourist pocket &mdash; food, groceries and rides all reach the door.</p>
+    </div>
+    <div class="local-grid">
+      <div class="local-card" data-reveal>
+        <span class="eyebrow">Food &amp; groceries</span>
+        <h3>Delivered to your door</h3>
+        <ul class="chip-list">
+          <li>Swiggy</li>
+          <li>Zomato</li>
+          <li>Blinkit</li>
+          <li>Instamart</li>
+        </ul>
+        <p>All four deliver to the flats, so a late dinner or a forgotten packet of tea is never a problem. <b>D-Mart is within walking distance</b> for a bigger grocery run &mdash; useful when you're cooking in the flat's own kitchen.</p>
+      </div>
+      <div class="local-card" data-reveal>
+        <span class="eyebrow">Getting around</span>
+        <h3>Rides, whatever the hour</h3>
+        <ul class="chip-list">
+          <li>Rapido <em>&middot; our pick</em></li>
+          <li>Uber</li>
+          <li>Ola</li>
+        </ul>
+        <p>All three work in Ujjain. Lav and Kush suggest Rapido first &mdash; handy for a short hop to Mahakal, including the pre-dawn Bhasma Aarti run. Auto and cab stands are close by too if you'd rather not use an app.</p>
+      </div>
     </div>
   </div>
 </section>
