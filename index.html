@@ -351,6 +351,49 @@
   .addr-card address { font-style: normal; font-family: 'Fraunces', serif; font-size: 1.2rem; line-height: 1.5; margin: 0 0 22px; }
   .addr-card .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
 
+  /* ---------- guest reviews ---------- */
+  .review-strip {
+    display: grid; grid-auto-flow: column; grid-auto-columns: min(82vw, 380px);
+    gap: 16px; overflow-x: auto; padding-bottom: 16px;
+    scroll-snap-type: x mandatory;
+    padding-left: clamp(20px,5vw,48px); padding-right: clamp(20px,5vw,48px);
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .review-card {
+    scroll-snap-align: start;
+    display: flex; flex-direction: column; min-width: 0;
+    background: rgba(244,239,228,0.06); border: 1px solid rgba(244,239,228,0.2);
+    border-radius: 2px; padding: 26px; margin: 0;
+  }
+  .review-card .stars {
+    color: var(--brass); font-size: 0.9rem; letter-spacing: 0.12em; margin-bottom: 14px;
+  }
+  .review-card blockquote {
+    margin: 0 0 20px; font-size: 0.94rem; line-height: 1.62;
+    color: rgba(244,239,228,0.88);
+  }
+  .review-card figcaption {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: auto;
+    padding-top: 16px; border-top: 1px solid rgba(244,239,228,0.16);
+  }
+  .review-card .who {
+    flex: none; width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid var(--brass); color: var(--brass);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 0.92rem;
+  }
+  .review-card figcaption b {
+    display: block; font-size: 0.9rem; font-weight: 600; color: var(--dusk-ink);
+  }
+  .review-card figcaption em {
+    display: block; font-style: normal;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(244,239,228,0.55); margin-top: 3px;
+  }
+
   /* ---------- local conveniences ---------- */
   .local-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,40px); }
   .local-grid > * { min-width: 0; }
@@ -677,6 +720,78 @@
         <p>All three work in Ujjain. Lav and Kush suggest Rapido first &mdash; handy for a short hop to Mahakal, including the pre-dawn Bhasma Aarti run. Auto and cab stands are close by too if you'd rather not use an app.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band-dusk" id="reviews">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2 style="color:var(--dusk-ink);">What guests actually say.</h2>
+      <p>Every word below is from a real Google or Airbnb review &mdash; none of it written by us.</p>
+    </div>
+  </div>
+  <div class="review-strip" data-reveal>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>We came from Hyderabad to visit the Mahakal Temple, and this stay was absolutely worth it! The property is just 10&ndash;15 minutes from the temple, very clean, spacious, and budget-friendly. The fully equipped kitchen was a big plus&hellip; A special thanks to the owner for responding to us early in the morning when we were struggling to find accommodation.</blockquote>
+        <figcaption><span class="who">S</span><span><b>Sanjana Nayak</b><em>Google &middot; family holiday</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>The place was exceptionally clean, well-maintained, and very comfortable&hellip; The location is also excellent &mdash; just about 12 minutes from Mahakaleshwar Temple and very close to public transportation. A special thanks to the hosts, the twins, especially Kush. He was incredibly kind, understanding, and accommodating.</blockquote>
+        <figcaption><span class="who">K</span><span><b>Kanna</b><em>Airbnb &middot; 2 nights</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>The host was incredibly kind, helpful, responsive, and soft-spoken&hellip; The Airbnb was clean, cozy, and exactly as described. I had a wonderful experience and would definitely recommend staying here! Also very safe space for a woman too.</blockquote>
+        <figcaption><span class="who">D</span><span><b>Divya</b><em>Airbnb &middot; 1 night</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>My visit to Ujjain for Mahakaleshwar darshan was truly a soulful and unforgettable experience. The stay felt more like a home than just an Airbnb&hellip; A special heartfelt thanks to Mahesh, the coordinator &mdash; from arranging local transport to suggesting the right places for food, he took care of everything with genuine kindness.</blockquote>
+        <figcaption><span class="who">E</span><span><b>E L S Kiran Prasad</b><em>Airbnb &middot; 2 nights</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>The property is exactly as described &mdash; spotlessly clean, spacious, well-maintained, and equipped with all the amenities needed for a comfortable stay. The peaceful ambience and beautiful balcony made our stay even more relaxing&hellip; it truly felt like a home away from home.</blockquote>
+        <figcaption><span class="who">S</span><span><b>Sakshi</b><em>Airbnb &middot; 1 night</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Our stay at L&amp;K Homestay exceeded our expectations. The rooms were spacious, the interiors were tastefully done, and the overall atmosphere was calm and welcoming&hellip; The host was friendly, quick to respond, and made sure we had a hassle-free experience from check-in to check-out.</blockquote>
+        <figcaption><span class="who">R</span><span><b>Radhika</b><em>Airbnb &middot; 1 night</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Our stay was absolutely wonderful. The place was spotless, comfortable, and exactly as described. The host was responsive, welcoming, and made the entire experience seamless. We truly felt at home and would happily stay here again.</blockquote>
+        <figcaption><span class="who">N</span><span><b>Neelansh Khetan</b><em>Google review</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>We had a great stay! The place was clean, spacious, and more than big enough for us. The host was super nice, helpful, and went above and beyond to make our stay comfortable. They even helped us late at night when we needed assistance.</blockquote>
+        <figcaption><span class="who">S</span><span><b>Samyak</b><em>Airbnb &middot; 1 night</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>It was an excellent stay at L&amp;K home stay. Both Luv and Kush are excellent hosts and support your journey from check in to check out with no hassle during overall stay.</blockquote>
+        <figcaption><span class="who">U</span><span><b>Ujjwal Tyagi</b><em>Google &middot; family holiday</em></span></figcaption>
+      </figure>
+
+      <figure class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>The stay was very memorable and the hospitality was best as well. The owner's and care taker's behaviour was very helping and friendly. The property is very good, I will highly recommend this to everybody visiting Ujjain.</blockquote>
+        <figcaption><span class="who">V</span><span><b>Vrinda Khetan</b><em>Google review</em></span></figcaption>
+      </figure>
+
   </div>
 </section>
 

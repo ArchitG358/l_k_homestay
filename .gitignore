@@ -1,0 +1,7 @@
+# macOS metadata — was previously published to the live site
+.DS_Store
+
+# Source screenshots for the testimonials section.
+# Kept local: they contain guests' names and profile photos, and the Pages
+# workflow deploys the whole repo, so committing them would publish them.
+reviews/
