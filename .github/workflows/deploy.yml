@@ -1,0 +1,35 @@
+name: Deploy to InfinityFree
+
+# Runs automatically on every push to main, and can also be triggered manually
+# from the Actions tab (Run workflow button).
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: FTP deploy to htdocs
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./
+          server-dir: ./htdocs/
+          # Never touch these on the server — config.php holds your real DB
+          # credentials and only exists on InfinityFree, never in this repo.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/config.php
+            **/config.sample.php
+            **/*.md
+            **/.github/**
