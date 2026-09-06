@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L&amp;K Homestay — Ujjain</title>
-<meta name="description" content="A full two-bedroom home in the heart of Ujjain, run by brothers Lav and Kush. Message on WhatsApp or call to book — no app, no login.">
+<meta name="description" content="Five furnished flats — 2BHK and 3BHK — in the heart of Ujjain, run by brothers Lav and Kush. Message on WhatsApp or call to book — no app, no login.">
 <meta property="og:title" content="L&amp;K Homestay, Ujjain">
-<meta property="og:description" content="A home ten minutes from Mahakal. Entire 2BHK, sleeps 6. Message on WhatsApp or call to book.">
+<meta property="og:description" content="A home ten minutes from Mahakal. Five flats — 2BHK &amp; 3BHK — sleeping up to 14. Message on WhatsApp or call to book.">
 <meta property="og:image" content="images/hero.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛕</text></svg>">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -113,12 +113,21 @@
     padding-top: 14px; padding-bottom: 14px; gap: 12px;
   }
   .brand {
+    display: inline-flex; align-items: center; gap: 10px;
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 1.15rem;
     letter-spacing: 0.01em;
   }
+  .brand img {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #F2EEE5; padding: 3px; border: 1px solid var(--line);
+  }
   .brand em { font-style: italic; color: var(--maroon); }
+  .brand-tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.04em;
+    color: var(--ink-soft); font-style: italic; margin-top: 3px;
+  }
   .topbar nav { display: flex; gap: 10px; }
 
   .btn {
@@ -278,22 +287,35 @@
 
   /* ---------- amenities ---------- */
   .amenity-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-    background: var(--line); border: 1px solid var(--line);
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line); border-left: 1px solid var(--line);
   }
   .amenity {
-    background: var(--bg); padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start;
-    min-width: 0;
+    padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start;
+    min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
   }
   .amenity svg { flex: none; width: 20px; height: 20px; color: var(--maroon); margin-top: 2px; }
   .amenity span { font-size: 0.92rem; min-width: 0; overflow-wrap: break-word; }
 
-  /* ---------- rooms ---------- */
+  /* ---------- flat types ---------- */
   .room-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,40px); }
-  .room-card .frame { aspect-ratio: 5/4; border-radius: 2px; overflow: hidden; margin-bottom: 18px; }
-  .room-card .eyebrow { display: block; margin-bottom: 6px; }
-  .room-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
-  .room-card p { color: var(--ink-soft); font-size: 0.92rem; max-width: 40ch; margin: 0; }
+  .room-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
+    padding: 28px;
+  }
+  .room-card-top { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+  .flat-badge {
+    flex: none; width: 60px; height: 60px; border-radius: 50%;
+    border: 1px solid var(--brass); display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 0.92rem; color: var(--maroon);
+  }
+  .room-card .eyebrow { display: block; }
+  .room-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
+  .room-card .spec {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--ink);
+    margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  }
+  .room-card p.desc { color: var(--ink-soft); font-size: 0.92rem; max-width: 40ch; margin: 0; }
 
   /* ---------- location ---------- */
   .loc-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px,5vw,64px); align-items: center; }
@@ -318,7 +340,7 @@
   .step p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
 
   /* ---------- platform booking cards ---------- */
-  .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 640px; }
   .platform-card {
     background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
     padding: 26px; display: flex; flex-direction: column; gap: 14px;
@@ -378,9 +400,6 @@
   [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
   [data-reveal].is-in { opacity: 1; transform: none; }
 
-  @media (max-width: 900px) {
-    .platform-grid { grid-template-columns: repeat(3, 1fr); }
-  }
   @media (max-width: 860px) {
     .intro-grid, .room-pair, .loc-grid { grid-template-columns: 1fr; }
     .amenity-grid { grid-template-columns: repeat(2,1fr); }
@@ -394,13 +413,21 @@
     .amenity-grid { grid-template-columns: 1fr 1fr; }
     .hero-meta { gap: 20px; }
   }
-  @media (max-width: 360px) {
-    .topbar .wrap { padding-top: 11px; padding-bottom: 11px; }
-    .brand { font-size: 1rem; }
+  @media (max-width: 480px) {
+    .topbar .wrap { padding-top: 11px; padding-bottom: 11px; gap: 6px; }
+    .brand { font-size: 0.95rem; gap: 6px; }
+    .brand img { width: 26px; height: 26px; }
     .topbar nav { gap: 6px; }
-    .topbar .btn { padding: 8px 12px; font-size: 0.8rem; gap: 5px; }
-    .topbar .btn svg { width: 14px; height: 14px; }
+    .topbar .btn { padding: 8px 11px; font-size: 0.78rem; gap: 4px; }
+    .topbar .btn svg { width: 13px; height: 13px; }
+  }
+  @media (max-width: 360px) {
     .hero-badge { font-size: 0.66rem; padding: 6px 10px; }
+  }
+  @media (max-width: 340px) {
+    .brand img { display: none; }
+    .brand { font-size: 0.88rem; }
+    .topbar .btn { padding: 7px 9px; font-size: 0.73rem; }
   }
 </style>
 </head>
@@ -408,14 +435,14 @@
 
 <div class="topbar">
   <div class="wrap">
-    <div class="brand">L&amp;K <em>Homestay</em></div>
+    <div class="brand"><img src="images/logo-mark.png" alt="" width="34" height="34">L&amp;K <em>Homestay</em></div>
     <nav>
       <a class="btn btn-ghost" href="#stay">The stay</a>
-      <a class="btn btn-wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+      <a class="btn btn-wa" href="https://wa.me/917389111152?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
         WhatsApp
       </a>
-      <a class="btn btn-call" href="tel:+918770549040">
+      <a class="btn btn-call" href="tel:+917389111152">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Call
       </a>
@@ -426,25 +453,25 @@
 <section class="hero">
   <div class="frame"><img src="images/hero.jpg" alt="L&amp;K Homestay exterior, Ujjain" width="1200" height="900"></div>
   <div class="wrap hero-inner">
-    <span class="hero-badge">★ 5.0 <b>&middot; Guest Favorite</b> &middot; 8 reviews on Airbnb</span>
+    <span class="hero-badge">★ 5.0 <b>&middot; Guest Favorite</b></span>
     <h1>A home to return to, <em>ten minutes</em> from Mahakal.</h1>
-    <p class="lede">L&amp;K Homestay is a full two-bedroom home in the heart of Ujjain, run in person by brothers Lav and Kush &mdash; built for families and Mahakal Darshan pilgrims who want a quiet, comfortable base rather than a hotel room.</p>
+    <p class="lede">L&amp;K Homestay is five independently furnished flats in the heart of Ujjain &mdash; four 2BHK homes and one spacious 3BHK &mdash; each run in person by brothers Lav and Kush. Built for families and Mahakal Darshan pilgrims who want a quiet, comfortable base rather than a hotel room.</p>
     <div class="hero-ctas">
-      <a class="btn btn-wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+      <a class="btn btn-wa" href="https://wa.me/917389111152?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
         Message on WhatsApp
       </a>
-      <a class="btn btn-call" href="tel:+918770549040">
+      <a class="btn btn-call" href="tel:+917389111152">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        87705 49040
+        73891 11152
       </a>
       <a class="btn btn-ghost" href="#stay">See the space &darr;</a>
     </div>
     <div class="hero-meta">
-      <div class="stat"><b>2</b><span>Bedrooms</span></div>
-      <div class="stat"><b>3</b><span>Bathrooms</span></div>
-      <div class="stat"><b>6</b><span>Guests</span></div>
-      <div class="stat"><b>Entire</b><span>Home, not shared</span></div>
+      <div class="stat"><b>5</b><span>Flats in Ujjain</span></div>
+      <div class="stat"><b>2&ndash;3</b><span>Bedrooms per flat</span></div>
+      <div class="stat"><b>Up to 14</b><span>Guests, largest flat</span></div>
+      <div class="stat"><b>Entire</b><span>Flats, not shared</span></div>
     </div>
   </div>
 </section>
@@ -454,7 +481,7 @@
     <div class="intro-grid">
       <div class="lede-col" data-reveal>
         <span class="eyebrow">The homestay</span>
-        <p style="margin-top:14px;">Bring the whole family. At L&amp;K Homestay our goal is simple &mdash; make every guest feel at home. Clean, spacious air-conditioned rooms, contemporary bathrooms, a fully equipped kitchen, and a peaceful atmosphere in the heart of Ujjain.</p>
+        <p style="margin-top:14px;">Bring the whole family, or the whole group. Across all five of our flats, the goal is the same &mdash; make every guest feel at home. Clean, spacious air-conditioned rooms, contemporary bathrooms, a fully equipped kitchen, and a peaceful atmosphere in the heart of Ujjain.</p>
         <p>Whether you're here for Mahakal Darshan or exploring the city, Lav and Kush are on hand to make the stay comfortable and easy &mdash; not a booking engine, just two brothers who answer the phone.</p>
         <div class="twin-note">
           <div class="twin-glyph">L&amp;K</div>
@@ -462,11 +489,10 @@
         </div>
       </div>
       <div class="facts-col" data-reveal>
-        <div class="fact-row"><span>Property type</span><span>Entire rental home</span></div>
-        <div class="fact-row"><span>Layout</span><span>2 bedrooms &middot; 2 beds</span></div>
-        <div class="fact-row"><span>Bathrooms</span><span>3 full bathrooms</span></div>
-        <div class="fact-row"><span>Sleeps</span><span>Up to 6 guests</span></div>
-        <div class="fact-row"><span>Kitchen</span><span>Fully equipped</span></div>
+        <div class="fact-row"><span>Flats</span><span>5 total, in Ujjain</span></div>
+        <div class="fact-row"><span>2BHK &middot; &times;4</span><span>2 bed &middot; 3 bath &middot; sleeps 6, up to 9</span></div>
+        <div class="fact-row"><span>3BHK &middot; &times;1</span><span>3 bed &middot; 3 bath &middot; sleeps 8, up to 14</span></div>
+        <div class="fact-row"><span>Kitchen</span><span>Fully equipped, every flat</span></div>
         <div class="fact-row"><span>Cooling</span><span>Air conditioning, all rooms</span></div>
         <div class="fact-row"><span>Parking</span><span>Free, on premises</span></div>
         <div class="fact-row"><span>Rates</span><span>Message for current rates</span></div>
@@ -479,7 +505,7 @@
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>Every room, before you arrive.</h2>
-      <p>The living room, the kitchen, both bedrooms, the balcony &mdash; a real look at the home you'll be staying in.</p>
+      <p>A real look at the interiors and finish you can expect &mdash; every flat, 2BHK or 3BHK, is set up to the same standard.</p>
     </div>
   </div>
   <div class="filmstrip" data-reveal>
@@ -501,21 +527,27 @@
 <section>
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <h2>Two bedrooms, done properly.</h2>
-      <p>Room-darkening blinds for the early Bhasma Aarti risers, fresh linen, extra pillows on request.</p>
+      <h2>Two flat types, five homes.</h2>
+      <p>Every flat is fully private &mdash; no shared walls, no shared kitchen. Room-darkening blinds and fresh linen throughout, for the early Bhasma Aarti risers.</p>
     </div>
     <div class="room-pair">
       <div class="room-card" data-reveal>
-        <div class="frame"><img src="images/bedroom1b.jpg" alt="Bedroom one" loading="lazy"></div>
-        <span class="eyebrow">Bedroom &middot; 01</span>
-        <h3>The quiet room</h3>
-        <p>A double bed, blackout blinds and an en-suite bathroom &mdash; set back from the street for guests who want an early night before dawn Darshan.</p>
+        <div class="room-card-top">
+          <div class="flat-badge">2BHK</div>
+          <span class="eyebrow">&times;4 available</span>
+        </div>
+        <h3>Comfortable for families</h3>
+        <p class="spec">2 bedrooms &middot; 3 bathrooms &middot; sleeps 6, up to 9</p>
+        <p class="desc">Our most-booked layout &mdash; two private bedrooms, three full bathrooms, and a real kitchen and living room. Ideal for a family of four to six.</p>
       </div>
       <div class="room-card" data-reveal>
-        <div class="frame"><img src="images/bedroom2b.jpg" alt="Bedroom two" loading="lazy"></div>
-        <span class="eyebrow">Bedroom &middot; 02</span>
-        <h3>The family room</h3>
-        <p>Bright and airy with its own bathroom close by &mdash; comfortably fits the rest of the family or a second couple travelling together.</p>
+        <div class="room-card-top">
+          <div class="flat-badge">3BHK</div>
+          <span class="eyebrow">1 available</span>
+        </div>
+        <h3>Room for the whole group</h3>
+        <p class="spec">3 bedrooms &middot; 3 bathrooms &middot; sleeps 8, up to 14</p>
+        <p class="desc">Our largest flat, built for bigger families or groups travelling together for Darshan &mdash; three bedrooms and three bathrooms under one roof.</p>
       </div>
     </div>
   </div>
@@ -528,15 +560,27 @@
       <p>Everything you'd pack for is already here.</p>
     </div>
     <div class="amenity-grid" data-reveal>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 3v18M9 8h5M9 13h5M9 18h5"/></svg><span>Spacious 2BHK &amp; 3BHK flats</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12.5a9 9 0 0 1 14 0M8 15.8a5 5 0 0 1 8 0M12 19h.01"/></svg><span>High-speed Wi-Fi</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9V6a4 4 0 0 1 8 0v3M4 9h16v11H4z"/></svg><span>Air conditioning</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="15" height="10" rx="1"/><path d="M17 10l5-2v8l-5-2z"/></svg><span>Smart TV</span></div>
       <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="1.5"/><path d="M3 9h18M8 4v14"/></svg><span>Fully equipped kitchen</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12.5a9 9 0 0 1 14 0M8 15.8a5 5 0 0 1 8 0M12 19h.01"/></svg><span>Free WiFi throughout</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1.5"/><circle cx="8" cy="12" r="2"/></svg><span>Free parking on premises</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9V6a4 4 0 0 1 8 0v3M4 9h16v11H4z"/></svg><span>Air conditioning, every room</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="15" height="10" rx="1"/><path d="M17 10l5-2v8l-5-2z"/></svg><span>HDTV in the living room</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="1.5"/><path d="M6 9h12"/><path d="M9 5.5h1M9 12.5h1"/></svg><span>Refrigerator</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1.5"/><circle cx="9" cy="12" r="2.6"/><circle cx="16" cy="12" r="2.6"/></svg><span>Induction cooktop</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 2v7a2 2 0 0 0 4 0V2M9 9v13"/><path d="M15 2c-1.2 2.2-1.2 5 0 7s1.2 3 0 5v6"/></svg><span>Basic cooking utensils</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg><span>Hot &amp; cold water</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/></svg><span>RO drinking water</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="14.5" width="16" height="4" rx="1"/><rect x="4" y="9.5" width="16" height="4" rx="1"/><rect x="4" y="4.5" width="16" height="4" rx="1"/></svg><span>Fresh linen &amp; towels</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 2h4v3l2 2v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V7l2-2z"/><path d="M9 12h6"/></svg><span>Toiletries</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1.5"/><circle cx="8" cy="12" r="2"/></svg><span>Free parking</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="12" height="8" rx="2"/><circle cx="9" cy="12" r="2.2"/><path d="M15 11l4-2.5v7L15 13M3 8L1.5 6"/></svg><span>CCTV surveillance</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-5 8 5v12"/><path d="M4 12h16"/></svg><span>Balcony (view &amp; ventilation)</span></div>
       <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 21v-4h6v4"/></svg><span>Lift access</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-5 8 5v12"/><path d="M4 12h16"/></svg><span>Private balcony</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span>Full-time caretaker on call</span></div>
-      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg><span>24/7 hot water</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M4 12h16"/></svg><span>Luggage assistance</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4l-9 9"/><path d="M11 13l-2 7 8-3z"/><path d="M14 6l2 2"/></svg><span>Regular housekeeping</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>24/7 assistance</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span>24/7 caretaker support</span></div>
+      <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.6"/><path d="M2 20a6 6 0 0 1 12 0M13.5 20a5 5 0 0 1 9-3.2"/></svg><span>Suitable for families &amp; groups</span></div>
     </div>
   </div>
 </section>
@@ -559,7 +603,8 @@
         <span class="eyebrow on-dusk">Address</span>
         <address>L&amp;K Homestay<br>Sunrise City, 55<br>Behind Anjushree Hotel<br>Ujjain, Madhya Pradesh 456010</address>
         <a class="btn btn-call" href="https://www.google.com/maps/search/?api=1&query=L%26K+Homestay+Sunrise+City+55+Behind+Anjushree+Hotel+Ujjain+Madhya+Pradesh+456010" target="_blank" rel="noopener">Get directions</a>
-        <a class="btn btn-wa wrap-text" href="https://wa.me/918770549040?text=Hi%2C%20could%20you%20share%20directions%20to%20L%26K%20Homestay%3F" target="_blank" rel="noopener">Directions on WhatsApp</a>
+        <a class="btn btn-wa wrap-text" href="https://wa.me/917389111152?text=Hi%2C%20could%20you%20share%20directions%20to%20L%26K%20Homestay%3F" target="_blank" rel="noopener">Directions on WhatsApp</a>
+        <p style="margin:14px 0 0; font-size:0.82rem; color:rgba(244,239,228,0.65);">Alternate number: <a href="tel:+918770549040" style="color:var(--dusk-ink); text-decoration:underline;">87705 49040</a> (call or WhatsApp)</p>
       </div>
     </div>
   </div>
@@ -600,18 +645,13 @@
     <div class="platform-grid" data-reveal>
       <div class="platform-card">
         <span class="platform-mark"><span class="dot" style="background:var(--airbnb);"></span>Airbnb</span>
-        <p>★ 5.0 rating &middot; 8 reviews &middot; Guest Favorite. Book with Airbnb's own protections and cancellation policy.</p>
+        <p>★ 5.0 rating &middot; Guest Favorite. Book with Airbnb's own protections and cancellation policy.</p>
         <a class="btn btn-ghost" href="https://www.airbnb.co.in/rooms/1720204935359673764" target="_blank" rel="noopener">Book on Airbnb</a>
       </div>
       <div class="platform-card">
         <span class="platform-mark"><span class="dot" style="background:var(--mmt);"></span>MakeMyTrip</span>
         <p>Pay in rupees with familiar checkout, EMI options and MMT support if you already book your travel there.</p>
         <a class="btn btn-ghost" href="https://www.makemytrip.com/hotels/l_k_homestay-details-ujjain.html" target="_blank" rel="noopener">Book on MakeMyTrip</a>
-      </div>
-      <div class="platform-card">
-        <span class="platform-mark"><span class="dot" style="background:var(--brass);"></span>Google Hotels</span>
-        <p>Compare rates across platforms in one place before you decide where to book.</p>
-        <a class="btn btn-ghost" href="https://www.google.com/travel/hotels/s/VKoEu4MNJdaB7Qmx5" target="_blank" rel="noopener">View on Google</a>
       </div>
     </div>
     <div class="direct-note" data-reveal>
@@ -625,12 +665,12 @@
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>Also findable, in case you'd rather look us up.</h2>
-      <p>Same home, same hosts &mdash; listed on the platforms above with independent reviews.</p>
+      <p>Same address, same hosts &mdash; find and compare us wherever you're already looking.</p>
     </div>
     <div class="trust-strip" data-reveal>
-      <a class="trust-chip" href="https://www.airbnb.co.in/rooms/1720204935359673764" target="_blank" rel="noopener"><b>★ 5.0</b> on Airbnb &middot; 8 reviews</a>
+      <a class="trust-chip" href="https://www.airbnb.co.in/rooms/1720204935359673764" target="_blank" rel="noopener"><b>★ 5.0</b> on Airbnb</a>
       <a class="trust-chip" href="https://www.makemytrip.com/hotels/l_k_homestay-details-ujjain.html" target="_blank" rel="noopener">Listed on MakeMyTrip</a>
-      <a class="trust-chip" href="https://www.google.com/travel/hotels/s/VKoEu4MNJdaB7Qmx5" target="_blank" rel="noopener">Find us on Google Hotels</a>
+      <a class="trust-chip" href="https://www.google.com/maps/search/?api=1&query=L%26K+Homestay+Sunrise+City+55+Behind+Anjushree+Hotel+Ujjain+Madhya+Pradesh+456010" target="_blank" rel="noopener">Find us on Google Maps</a>
     </div>
   </div>
 </section>
@@ -640,34 +680,37 @@
     <span class="eyebrow">Ready when you are</span>
     <h2 style="margin-top:14px;">Message Lav &amp; Kush directly.</h2>
     <div class="cta-row">
-      <a class="btn btn-wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+      <a class="btn btn-wa" href="https://wa.me/917389111152?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
-        WhatsApp: 87705 49040
+        WhatsApp: 73891 11152
       </a>
-      <a class="btn btn-call" href="tel:+918770549040">
+      <a class="btn btn-call" href="tel:+917389111152">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call: 87705 49040
+        Call: 73891 11152
       </a>
     </div>
+    <p style="margin-top:20px; font-size:0.82rem; color:var(--ink-soft);">Alternate number: <a href="tel:+918770549040" style="color:var(--maroon); text-decoration:underline;">87705 49040</a> (call or WhatsApp)</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div>
-      <div class="brand">L&amp;K <em>Homestay</em></div>
-      <p style="margin-top:6px;">Sunrise City, 55, Behind Anjushree Hotel, Ujjain, MP 456010</p>
+      <div class="brand"><img src="images/logo-mark.png" alt="" width="34" height="34">L&amp;K <em>Homestay</em></div>
+      <div class="brand-tag">A home away from home.</div>
+      <p style="margin-top:10px;">Sunrise City, 55, Behind Anjushree Hotel, Ujjain, MP 456010</p>
+      <p style="margin-top:4px;"><a href="tel:+917389111152">73891 11152</a> &middot; <a href="tel:+918770549040">87705 49040</a> (call or WhatsApp)</p>
     </div>
     <p>Hosted by Lav &amp; Kush &middot; Ujjain, Madhya Pradesh</p>
   </div>
 </footer>
 
 <div class="mobile-cta">
-  <a class="call" href="tel:+918770549040">
+  <a class="call" href="tel:+917389111152">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Call
   </a>
-  <a class="wa" href="https://wa.me/918770549040?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
+  <a class="wa" href="https://wa.me/917389111152?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
     WhatsApp
   </a>
