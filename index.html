@@ -30,6 +30,8 @@
     --whatsapp: #3E8E5C;
     --airbnb: #B0264B;
     --mmt: #EE5A1E;
+    --phone: #2A5DA8;
+    --phone-strong: #1F4680;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -46,6 +48,8 @@
       --dusk-ink: #F4EFE4;
       --line: rgba(243,236,226,0.16);
       --whatsapp: #55B57C;
+      --phone: #6FA3EC;
+      --phone-strong: #8CB8EE;
     }
   }
   :root[data-theme="dark"] {
@@ -62,6 +66,8 @@
     --dusk-ink: #F4EFE4;
     --line: rgba(243,236,226,0.16);
     --whatsapp: #55B57C;
+    --phone: #6FA3EC;
+    --phone-strong: #8CB8EE;
   }
 
   * { box-sizing: border-box; }
@@ -146,10 +152,10 @@
   .btn:hover { transform: translateY(-1px); }
   .btn:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
   .btn-call {
-    background: var(--maroon); color: #FBF6EE;
+    background: var(--phone); color: #FBF6EE;
     box-shadow: 0 1px 0 rgba(0,0,0,0.15);
   }
-  .btn-call:hover { background: var(--maroon-strong); }
+  .btn-call:hover { background: var(--phone-strong); }
   .btn-wa {
     background: var(--whatsapp); color: #fff;
   }
@@ -197,6 +203,12 @@
     max-width: 14ch;
   }
   .hero h1 em { font-style: italic; font-weight: 500; color: #E9C482; }
+  .btn-call-alt {
+    background: transparent; border: 1.5px solid var(--phone); color: var(--phone);
+  }
+  .btn-call-alt:hover { background: var(--phone); color: #fff; }
+  .hero-ctas .btn-call-alt { border-color: #8FBBEE; color: #8FBBEE; }
+  .hero-ctas .btn-call-alt:hover { background: #8FBBEE; color: #1C2740; }
   .hero p.lede {
     margin-top: 20px;
     max-width: 46ch;
@@ -393,7 +405,7 @@
     flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
     padding: 15px 10px; font-weight: 600; font-size: 0.92rem; text-decoration: none;
   }
-  .mobile-cta a.call { background: var(--maroon); color: #fff; }
+  .mobile-cta a.call { background: var(--phone); color: #fff; }
   .mobile-cta a.wa { background: var(--whatsapp); color: #fff; }
   .mobile-cta svg { width: 17px; height: 17px; }
 
@@ -408,6 +420,7 @@
     .topbar nav .btn-ghost { display: none; }
     .mobile-cta { display: flex; }
     footer { padding-bottom: 96px; }
+    .footer-phones { display: none; }
   }
   @media (max-width: 560px) {
     .amenity-grid { grid-template-columns: 1fr 1fr; }
@@ -464,6 +477,10 @@
       <a class="btn btn-call" href="tel:+917389111152">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         73891 11152
+      </a>
+      <a class="btn btn-call-alt" href="tel:+918770549040">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        87705 49040
       </a>
       <a class="btn btn-ghost" href="#stay">See the space &darr;</a>
     </div>
@@ -699,7 +716,7 @@
       <div class="brand"><img src="images/logo-mark.png" alt="" width="34" height="34">L&amp;K <em>Homestay</em></div>
       <div class="brand-tag">A home away from home.</div>
       <p style="margin-top:10px;">Sunrise City, 55, Behind Anjushree Hotel, Ujjain, MP 456010</p>
-      <p style="margin-top:4px;"><a href="tel:+917389111152">73891 11152</a> &middot; <a href="tel:+918770549040">87705 49040</a> (call or WhatsApp)</p>
+      <p class="footer-phones" style="margin-top:4px;"><a href="tel:+917389111152">73891 11152</a> &middot; <a href="tel:+918770549040">87705 49040</a> (call or WhatsApp)</p>
     </div>
     <p>Hosted by Lav &amp; Kush &middot; Ujjain, Madhya Pradesh</p>
   </div>
