@@ -5,3 +5,9 @@
 # Kept local: they contain guests' names and profile photos, and the Pages
 # workflow deploys the whole repo, so committing them would publish them.
 reviews/
+
+# Original PNG uploads — optimised .jpg versions are committed instead
+# (the Pages workflow deploys the whole repo, so the ~3.5MB of PNGs would ship too)
+images/Full_image.png
+images/full_image_night.png
+images/shivlinga photo.png

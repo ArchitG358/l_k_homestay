@@ -648,13 +648,19 @@
   /* ---------- page header with photo ---------- */
   .page-head.has-photo {
     position: relative; isolation: isolate; overflow: hidden;
-    padding-top: clamp(72px,10vw,120px); padding-bottom: clamp(60px,8vw,96px);
+    padding-top: clamp(88px,12vw,150px); padding-bottom: clamp(72px,9vw,110px);
   }
   .page-head.has-photo .backdrop { position: absolute; inset: 0; z-index: -2; }
-  .page-head.has-photo .backdrop img { width: 100%; height: 100%; object-fit: cover; }
+  /* object-position keeps the subject in frame: a wide, short band always crops
+     a 16:9 or portrait photo vertically, so bias the crop rather than centring. */
+  .page-head.has-photo .backdrop img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  }
   .page-head.has-photo::before {
     content: ""; position: absolute; inset: 0; z-index: -1;
-    background: linear-gradient(180deg, rgba(14,22,38,0.78) 0%, rgba(14,22,38,0.72) 45%, rgba(14,22,38,0.9) 100%);
+    background:
+      linear-gradient(100deg, rgba(14,22,38,0.94) 0%, rgba(14,22,38,0.82) 38%, rgba(14,22,38,0.28) 100%),
+      linear-gradient(180deg, rgba(14,22,38,0.35) 0%, rgba(14,22,38,0.25) 50%, rgba(14,22,38,0.6) 100%);
   }
   .photo-credit {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem;
@@ -667,4 +673,16 @@
   @media (max-width: 345px) {
     .topbar .topnav { gap: 10px; }
     .topbar .topnav a { font-size: 0.79rem; }
+  }
+
+  /* ---------- in-article figure ---------- */
+  .prose figure { margin: 2em 0; }
+  .prose figure img {
+    width: 100%; height: auto; display: block;
+    border-radius: 3px; border: 1px solid var(--line);
+  }
+  .prose figure.portrait img { max-width: 420px; }
+  .prose figcaption {
+    margin-top: 10px; font-size: 0.82rem; color: var(--ink-soft);
+    font-family: 'IBM Plex Mono', monospace; line-height: 1.5;
   }
