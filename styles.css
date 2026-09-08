@@ -99,9 +99,11 @@
     border-bottom: 1px solid var(--line);
   }
   .topbar .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-top: 14px; padding-bottom: 14px; gap: 12px;
+    display: flex; align-items: center;
+    padding-top: 14px; padding-bottom: 14px;
+    gap: clamp(14px, 2.4vw, 32px);
   }
+  .topbar-cta { margin-left: auto; }
   .brand {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: 'Fraunces', serif;
@@ -624,9 +626,23 @@
   .topnav a:hover { color: var(--maroon); border-bottom-color: var(--maroon); }
   .topnav a:focus-visible { outline: 2px solid var(--marigold); outline-offset: 3px; }
 
-  /* .topbar nav {display:flex} is (0,1,1) and outranks a bare .topnav (0,1,0),
-     so this hide rule must be at least as specific to win. */
-  @media (max-width: 1020px) { .topbar .topnav { display: none; } }
+  /* Below 1020px the nav drops to its own full-width row under the logo and
+     CTAs, rather than being hidden — on phones it is the only way to reach the
+     guide pages. Selectors here are .topbar .topnav (0,2,0) because the older
+     .topbar nav {display:flex} is (0,1,1) and outranks a bare .topnav (0,1,0). */
+  @media (max-width: 1020px) {
+    .topbar .wrap { flex-wrap: wrap; padding-bottom: 0; gap: 12px; }
+    .topbar .topnav {
+      order: 3; flex-basis: 100%;
+      margin-top: 2px; padding: 9px 0 10px;
+      border-top: 1px solid var(--line);
+      gap: clamp(16px, 4.6vw, 26px);
+      overflow-x: auto; scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .topbar .topnav::-webkit-scrollbar { display: none; }
+    .topbar .topnav a { font-size: 0.83rem; padding-bottom: 2px; }
+  }
   .topnav a.is-active { color: var(--maroon); border-bottom-color: var(--maroon); }
 
   /* ---------- page header with photo ---------- */
@@ -645,3 +661,10 @@
     letter-spacing: 0.04em; color: var(--ink-soft); margin: 0;
   }
   .photo-credit a { color: var(--ink-soft); }
+
+  /* At the very narrowest widths, tighten the nav row so all four items fit
+     without the last one being clipped (it was ~15px over at 320px). */
+  @media (max-width: 345px) {
+    .topbar .topnav { gap: 10px; }
+    .topbar .topnav a { font-size: 0.79rem; }
+  }
