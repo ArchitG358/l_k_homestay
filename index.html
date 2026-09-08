@@ -70,501 +70,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-  :root {
-    --bg: #F2EEE5;
-    --surface: #FFFFFF;
-    --surface-2: #E8E0D0;
-    --ink: #26191B;
-    --ink-soft: #5B4C46;
-    --maroon: #7C1F2B;
-    --maroon-strong: #5C141D;
-    --marigold: #B96A16;
-    --brass: #8C6A22;
-    --dusk: #1C2740;
-    --dusk-ink: #F4EFE4;
-    --line: rgba(38,25,27,0.14);
-    --whatsapp: #3E8E5C;
-    --airbnb: #B0264B;
-    --mmt: #EE5A1E;
-    --phone: #2A5DA8;
-    --phone-strong: #1F4680;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #16100F;
-      --surface: #1F1615;
-      --surface-2: #291D1B;
-      --ink: #F3ECE2;
-      --ink-soft: #C8B9AE;
-      --maroon: #E0596B;
-      --maroon-strong: #EE7889;
-      --marigold: #EFA84B;
-      --brass: #C9A227;
-      --dusk: #0E1626;
-      --dusk-ink: #F4EFE4;
-      --line: rgba(243,236,226,0.16);
-      --whatsapp: #55B57C;
-      --phone: #6FA3EC;
-      --phone-strong: #8CB8EE;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #16100F;
-    --surface: #1F1615;
-    --surface-2: #291D1B;
-    --ink: #F3ECE2;
-    --ink-soft: #C8B9AE;
-    --maroon: #E0596B;
-    --maroon-strong: #EE7889;
-    --marigold: #EFA84B;
-    --brass: #C9A227;
-    --dusk: #0E1626;
-    --dusk-ink: #F4EFE4;
-    --line: rgba(243,236,226,0.16);
-    --whatsapp: #55B57C;
-    --phone: #6FA3EC;
-    --phone-strong: #8CB8EE;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-  }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; text-wrap: balance; margin: 0; }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.72rem;
-    color: var(--marigold);
-    font-weight: 500;
-  }
-  .eyebrow.on-dusk { color: var(--brass); }
-
-  a { color: inherit; }
-  img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-  .wrap {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 clamp(20px, 5vw, 48px);
-  }
-
-  /* ---------- top bar ---------- */
-  .topbar {
-    position: sticky; top: 0; z-index: 40;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .topbar .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-top: 14px; padding-bottom: 14px; gap: 12px;
-  }
-  .brand {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-    letter-spacing: 0.01em;
-  }
-  .brand img {
-    width: 34px; height: 34px; border-radius: 50%;
-    background: #F2EEE5; padding: 3px; border: 1px solid var(--line);
-  }
-  .brand em { font-style: italic; color: var(--maroon); }
-  .brand-tag {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.04em;
-    color: var(--ink-soft); font-style: italic; margin-top: 3px;
-  }
-  .topbar nav { display: flex; gap: 10px; }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.88rem;
-    padding: 10px 18px;
-    border-radius: 3px;
-    border: 1px solid transparent;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: transform 0.15s ease, background 0.15s ease, box-shadow .15s ease;
-  }
-  .btn:hover { transform: translateY(-1px); }
-  .btn:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
-  .btn-call {
-    background: var(--phone); color: #FBF6EE;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.15);
-  }
-  .btn-call:hover { background: var(--phone-strong); }
-  .btn-wa {
-    background: var(--whatsapp); color: #fff;
-  }
-  .btn-wa:hover { filter: brightness(1.08); }
-  .btn-ghost {
-    background: transparent; border-color: var(--line); color: var(--ink);
-  }
-  .btn svg { width: 16px; height: 16px; flex: none; }
-  .btn.wrap-text { white-space: normal; text-align: center; }
-
-  /* ---------- hero ---------- */
-  .hero {
-    position: relative;
-    min-height: min(94vh, 820px);
-    min-height: min(94svh, 820px);
-    display: flex; align-items: flex-end;
-    color: var(--dusk-ink);
-    isolation: isolate;
-    overflow: hidden;
-  }
-  .hero .frame { position: absolute; inset: 0; z-index: -2; }
-  .hero .frame img { width: 100%; height: 100%; object-fit: cover; }
-  .hero::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background:
-      linear-gradient(180deg, rgba(14,22,38,0.35) 0%, rgba(14,22,38,0.28) 30%, rgba(14,22,38,0.72) 78%, rgba(14,22,38,0.92) 100%);
-  }
-  .hero-inner {
-    padding: clamp(90px, 16vw, 150px) 0 clamp(40px, 6vw, 64px);
-    width: 100%;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.74rem; letter-spacing: 0.06em;
-    background: rgba(244,239,228,0.12);
-    border: 1px solid rgba(244,239,228,0.35);
-    padding: 6px 12px; border-radius: 100px;
-    margin-bottom: 22px;
-  }
-  .hero-badge b { color: var(--brass); font-weight: 600; }
-  .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4.6rem);
-    font-weight: 600;
-    line-height: 1.03;
-    max-width: 14ch;
-  }
-  .hero h1 em { font-style: italic; font-weight: 500; color: #E9C482; }
-  .btn-call-alt {
-    background: transparent; border: 1.5px solid var(--phone); color: var(--phone);
-  }
-  .btn-call-alt:hover { background: var(--phone); color: #fff; }
-  .hero-ctas .btn-call-alt { border-color: #8FBBEE; color: #8FBBEE; }
-  .hero-ctas .btn-call-alt:hover { background: #8FBBEE; color: #1C2740; }
-  .hero p.lede {
-    margin-top: 20px;
-    max-width: 46ch;
-    font-size: clamp(1.02rem, 1.6vw, 1.2rem);
-    color: rgba(244,239,228,0.88);
-  }
-  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-  .hero-ctas .btn { padding: 13px 24px; font-size: 0.95rem; }
-  .hero-ctas .btn-ghost { background: rgba(244,239,228,0.08); border-color: rgba(244,239,228,0.4); color: var(--dusk-ink); }
-
-  .hero-meta {
-    margin-top: 46px;
-    display: flex; gap: clamp(18px,4vw,44px); flex-wrap: wrap;
-    padding-top: 22px; border-top: 1px solid rgba(244,239,228,0.22);
-  }
-  .hero-meta .stat b {
-    display: block; font-family: 'Fraunces', serif; font-weight: 600;
-    font-size: 1.5rem; font-variant-numeric: tabular-nums;
-  }
-  .hero-meta .stat span {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-    text-transform: uppercase; letter-spacing: 0.1em; color: rgba(244,239,228,0.65);
-  }
-
-  /* ---------- section shell ---------- */
-  section { padding: clamp(64px, 9vw, 104px) 0; }
-  .band-dusk { background: var(--dusk); color: var(--dusk-ink); }
-  .band-stone { background: var(--surface-2); }
-
-  .section-head {
-    display: flex; align-items: flex-end; justify-content: space-between;
-    gap: 24px; flex-wrap: wrap; margin-bottom: 42px;
-  }
-  .section-head h2 { font-size: clamp(1.6rem, 3.4vw, 2.5rem); font-weight: 600; max-width: 18ch; }
-  .section-head p { max-width: 42ch; color: var(--ink-soft); font-size: 0.98rem; }
-  .band-dusk .section-head p { color: rgba(244,239,228,0.7); }
-
-  /* ---------- welcome / twin intro ---------- */
-  .intro-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px);
-    align-items: start;
-  }
-  .intro-grid > *, .room-pair > *, .loc-grid > *, .platform-grid > * { min-width: 0; }
-  .intro-grid .lede-col p { font-size: clamp(1.02rem, 1.6vw, 1.25rem); font-family: 'Fraunces', serif; font-weight: 400; line-height: 1.5; color: var(--ink); }
-  .intro-grid .lede-col p + p { margin-top: 1.1em; }
-  .twin-note {
-    margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line);
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-  .twin-glyph {
-    flex: none; width: 44px; height: 44px; border-radius: 50%;
-    border: 1px solid var(--brass); display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-style: italic; color: var(--maroon); font-size: 1rem;
-  }
-  .twin-note p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
-  .twin-note b { color: var(--ink); font-weight: 600; }
-
-  .facts-col { display: grid; gap: 14px; align-content: start; }
-  .fact-row {
-    display: flex; justify-content: space-between; gap: 16px;
-    padding: 16px 0; border-bottom: 1px solid var(--line);
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.86rem;
-  }
-  .fact-row span:first-child { color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; padding-top: 3px; }
-  .fact-row span:last-child { text-align: right; font-weight: 500; }
-
-  /* ---------- gallery ---------- */
-  .filmstrip {
-    display: grid; grid-auto-flow: column; grid-auto-columns: min(78vw, 340px);
-    gap: 14px; overflow-x: auto; padding-bottom: 14px; scroll-snap-type: x mandatory;
-    padding-left: clamp(20px,5vw,48px); padding-right: clamp(20px,5vw,48px);
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-  }
-  .filmstrip .frame {
-    scroll-snap-align: start; position: relative; border-radius: 2px; overflow: hidden;
-    aspect-ratio: 4/5; background: var(--surface-2);
-  }
-  .filmstrip .frame:nth-child(3n+2) { aspect-ratio: 4/3; align-self: center; }
-  .filmstrip .frame figcaption {
-    position: absolute; left: 0; right: 0; bottom: 0;
-    padding: 10px 12px 8px;
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em;
-    text-transform: uppercase; color: #F4EFE4;
-    background: linear-gradient(180deg, transparent, rgba(14,10,9,0.75));
-  }
-  figure { margin: 0; }
-
-  /* ---------- amenities ---------- */
-  .amenity-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--line); border-left: 1px solid var(--line);
-  }
-  .amenity {
-    padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start;
-    min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  }
-  .amenity svg { flex: none; width: 20px; height: 20px; color: var(--maroon); margin-top: 2px; }
-  .amenity span { font-size: 0.92rem; min-width: 0; overflow-wrap: break-word; }
-
-  /* ---------- flat types ---------- */
-  .room-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,40px); }
-  .room-card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
-    padding: 28px;
-  }
-  .room-card-top { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
-  .flat-badge {
-    flex: none; width: 60px; height: 60px; border-radius: 50%;
-    border: 1px solid var(--brass); display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-weight: 600; font-size: 0.92rem; color: var(--maroon);
-  }
-  .room-card .eyebrow { display: block; }
-  .room-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
-  .room-card .spec {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--ink);
-    margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line);
-  }
-  .room-card p.desc { color: var(--ink-soft); font-size: 0.92rem; max-width: 40ch; margin: 0; }
-
-  /* ---------- location ---------- */
-  .loc-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px,5vw,64px); align-items: center; }
-  .loc-copy p { color: rgba(244,239,228,0.82); font-size: 1.02rem; max-width: 46ch; margin: 0; }
-  .loc-copy p + p { margin-top: 1em; }
-  .loc-list { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 12px; }
-  .loc-list li { display: flex; gap: 12px; align-items: baseline; font-size: 0.95rem; }
-  .loc-list li::before { content: "—"; color: var(--brass); flex: none; }
-  .map-frame {
-    margin-top: clamp(32px,5vw,56px);
-    border: 1px solid rgba(244,239,228,0.2); border-radius: 2px;
-    overflow: hidden; line-height: 0;
-  }
-  .map-frame iframe { width: 100%; height: clamp(280px, 38vw, 420px); border: 0; display: block; }
-  .addr-card {
-    background: rgba(244,239,228,0.06); border: 1px solid rgba(244,239,228,0.2);
-    padding: 30px; border-radius: 2px;
-  }
-  .addr-card .eyebrow { margin-bottom: 14px; display: block; }
-  .addr-card address { font-style: normal; font-family: 'Fraunces', serif; font-size: 1.2rem; line-height: 1.5; margin: 0 0 22px; }
-  .addr-card .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
-
-  /* ---------- guest reviews ---------- */
-  .review-strip {
-    display: grid; grid-auto-flow: column; grid-auto-columns: min(82vw, 380px);
-    gap: 16px; overflow-x: auto; padding-bottom: 16px;
-    scroll-snap-type: x mandatory;
-    padding-left: clamp(20px,5vw,48px); padding-right: clamp(20px,5vw,48px);
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-  }
-  .review-card {
-    scroll-snap-align: start;
-    display: flex; flex-direction: column; min-width: 0;
-    background: rgba(244,239,228,0.06); border: 1px solid rgba(244,239,228,0.2);
-    border-radius: 2px; padding: 26px; margin: 0;
-  }
-  .review-card .stars {
-    color: var(--brass); font-size: 0.9rem; letter-spacing: 0.12em; margin-bottom: 14px;
-  }
-  .review-card blockquote {
-    margin: 0 0 20px; font-size: 0.94rem; line-height: 1.62;
-    color: rgba(244,239,228,0.88);
-  }
-  .review-card figcaption {
-    display: flex; align-items: center; gap: 12px;
-    margin-top: auto;
-    padding-top: 16px; border-top: 1px solid rgba(244,239,228,0.16);
-  }
-  .review-card .who {
-    flex: none; width: 34px; height: 34px; border-radius: 50%;
-    border: 1px solid var(--brass); color: var(--brass);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-size: 0.92rem;
-  }
-  .review-card figcaption b {
-    display: block; font-size: 0.9rem; font-weight: 600; color: var(--dusk-ink);
-  }
-  .review-card figcaption em {
-    display: block; font-style: normal;
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: rgba(244,239,228,0.55); margin-top: 3px;
-  }
-
-  /* ---------- local conveniences ---------- */
-  .local-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px,4vw,40px); }
-  .local-grid > * { min-width: 0; }
-  .local-card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
-    padding: 28px;
-  }
-  .local-card .eyebrow { display: block; margin-bottom: 10px; }
-  .local-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 18px; }
-  .chip-list {
-    list-style: none; margin: 0 0 18px; padding: 0;
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .chip-list li {
-    border: 1px solid var(--line); border-radius: 100px;
-    padding: 6px 14px; font-size: 0.85rem; font-weight: 500;
-  }
-  .chip-list li em {
-    font-style: normal; color: var(--marigold); font-size: 0.78rem;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .local-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
-  .local-card p b { color: var(--ink); font-weight: 600; }
-
-  /* ---------- how to book ---------- */
-  .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(20px,4vw,32px); }
-  .step { padding-top: 22px; border-top: 2px solid var(--brass); }
-  .step .num { font-family: 'IBM Plex Mono', monospace; color: var(--marigold); font-size: 0.85rem; display: block; margin-bottom: 14px; }
-  .step h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
-  .step p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
-
-  /* ---------- platform booking cards ---------- */
-  .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 640px; }
-  .platform-card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
-    padding: 26px; display: flex; flex-direction: column; gap: 14px;
-  }
-  .platform-mark {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem;
-  }
-  .platform-mark .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
-  .platform-card p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); flex: 1; }
-  .platform-card .btn { justify-content: center; }
-  .direct-note {
-    margin-top: 28px; display: flex; gap: 12px; align-items: flex-start;
-    padding: 18px 20px; border: 1px dashed var(--line); border-radius: 3px;
-  }
-  .direct-note svg { flex: none; width: 20px; height: 20px; color: var(--marigold); margin-top: 2px; }
-  .direct-note p { margin: 0; font-size: 0.88rem; color: var(--ink-soft); }
-  .direct-note b { color: var(--ink); }
-
-  /* ---------- trust strip ---------- */
-  .trust-strip { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .trust-chip {
-    display: inline-flex; align-items: center; gap: 8px;
-    border: 1px solid var(--line); border-radius: 100px;
-    padding: 8px 16px; font-size: 0.84rem; text-decoration: none; color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-  }
-  .trust-chip:hover { border-color: var(--brass); }
-  .trust-chip b { color: var(--maroon); }
-
-  /* ---------- final cta ---------- */
-  .final-cta { text-align: center; }
-  .final-cta h2 { font-size: clamp(2rem,5vw,3.2rem); max-width: 16ch; margin: 0 auto; }
-  .final-cta .btn { padding: 15px 30px; font-size: 1rem; }
-  .final-cta .cta-row { display: flex; justify-content: center; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
-
-  /* ---------- footer ---------- */
-  footer { padding: 40px 0 40px; border-top: 1px solid var(--line); }
-  footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-  footer .brand { font-size: 1rem; }
-  footer p { font-size: 0.82rem; color: var(--ink-soft); margin: 0; }
-
-  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
-  [data-reveal].is-in { opacity: 1; transform: none; }
-
-  @media (max-width: 860px) {
-    .intro-grid, .room-pair, .loc-grid, .local-grid { grid-template-columns: 1fr; }
-    .amenity-grid { grid-template-columns: repeat(2,1fr); }
-    .steps { grid-template-columns: 1fr; }
-    .platform-grid { grid-template-columns: 1fr; }
-    .topbar nav .btn-ghost { display: none; }
-  }
-  @media (max-width: 560px) {
-    .amenity-grid { grid-template-columns: 1fr 1fr; }
-    .hero-meta { gap: 20px; }
-  }
-  @media (max-width: 480px) {
-    .topbar .wrap { padding-top: 11px; padding-bottom: 11px; gap: 6px; }
-    .brand { font-size: 0.95rem; gap: 6px; }
-    .brand img { width: 26px; height: 26px; }
-    .topbar nav { gap: 6px; }
-    .topbar .btn { padding: 8px 11px; font-size: 0.78rem; gap: 4px; }
-    .topbar .btn svg { width: 13px; height: 13px; }
-  }
-  @media (max-width: 360px) {
-    .hero-badge { font-size: 0.66rem; padding: 6px 10px; }
-  }
-  @media (max-width: 340px) {
-    .brand img { display: none; }
-    .brand { font-size: 0.88rem; }
-    .topbar .btn { padding: 7px 9px; font-size: 0.73rem; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
-    <div class="brand"><img src="images/logo-mark.png" alt="" width="34" height="34">L&amp;K <em>Homestay</em></div>
-    <nav>
-      <a class="btn btn-ghost" href="#stay">The stay</a>
+    <a class="brand" href="index.html" style="text-decoration:none;"><img src="images/logo-mark.png" alt="" width="34" height="34">L&amp;K <em>Homestay</em></a>
+    <nav class="topnav">
+      <a href="#stay">The stay</a>
+      <a href="bhasma-aarti.html">Bhasma Aarti</a>
+      <a href="how-to-reach-ujjain.html">Getting here</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <nav class="topbar-cta">
       <a class="btn btn-wa" href="https://wa.me/917389111152?text=Hi%20Lav%20%26%20Kush%2C%20I%27d%20like%20to%20check%20availability%20at%20L%26K%20Homestay" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.48 3.55 1.38 5.08L2 22l5.16-1.48a9.9 9.9 0 0 0 4.88 1.28h.004c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13h-.003a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.89.9-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.42c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.55-3.71 8.26-8.27 8.26z"/></svg>
         WhatsApp
@@ -729,6 +248,10 @@
           <li>Quiet residential lane, easy for pre-dawn Bhasma Aarti starts</li>
           <li>Local auto &amp; cab stands nearby for onward travel</li>
         </ul>
+        <p class="inline-links">
+          Planning the trip? Read our <a href="bhasma-aarti.html">Bhasma Aarti guide</a>
+          or <a href="how-to-reach-ujjain.html">how to reach Ujjain</a>.
+        </p>
       </div>
       <div class="addr-card" data-reveal>
         <span class="eyebrow on-dusk">Address</span>
@@ -776,6 +299,39 @@
         </ul>
         <p>All three work in Ujjain. Lav and Kush suggest Rapido first &mdash; handy for a short hop to Mahakal, including the pre-dawn Bhasma Aarti run. Auto and cab stands are close by too if you'd rather not use an app.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="guides">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Planning the trip, not just the stay.</h2>
+      <p>The questions we get asked most, written down properly &mdash; so you're not piecing it together at midnight.</p>
+    </div>
+    <div class="guide-grid" data-reveal>
+
+      <a class="guide-card" href="bhasma-aarti.html">
+        <span class="eyebrow">Ujjain guides</span>
+        <h3>The Bhasma Aarti</h3>
+        <p>The 4 AM ritual, how passes are actually issued, when the booking window opens, and the 1 AM reporting time most people don't plan for.</p>
+        <span class="go">Read the guide &rarr;</span>
+      </a>
+
+      <a class="guide-card" href="how-to-reach-ujjain.html">
+        <span class="eyebrow">Ujjain guides</span>
+        <h3>How to reach Ujjain</h3>
+        <p>Indore is the nearest airport, Ujjain Junction takes the trains. Routes, rough timings, and the landmark to give your cab driver.</p>
+        <span class="go">Read the guide &rarr;</span>
+      </a>
+
+      <a class="guide-card" href="faq.html">
+        <span class="eyebrow">Before you book</span>
+        <h3>Guest questions</h3>
+        <p>How many the flats sleep, whether you can cook, parking, distance to the temple, and what to expect on arrival.</p>
+        <span class="go">Read the FAQ &rarr;</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -943,7 +499,13 @@
       <p style="margin-top:10px;">Sunrise City, 55, Behind Anjushree Hotel, Ujjain, MP 456010</p>
       <p style="margin-top:4px;"><a href="tel:+917389111152">73891 11152</a> &middot; <a href="tel:+918770549040">87705 49040</a> (call or WhatsApp)</p>
     </div>
-    <p>Hosted by Lav &amp; Kush &middot; Ujjain, Madhya Pradesh</p>
+    <nav class="footer-nav">
+      <span class="eyebrow">Guides</span>
+      <a href="bhasma-aarti.html">Bhasma Aarti guide</a>
+      <a href="how-to-reach-ujjain.html">How to reach Ujjain</a>
+      <a href="faq.html">Guest questions</a>
+      <p style="margin-top:10px;">Hosted by Lav &amp; Kush &middot; Ujjain, Madhya Pradesh</p>
+    </nav>
   </div>
 </footer>
 
