@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,18 +15,18 @@
   gtag('config', 'AW-18284589937'); // Google Ads
 </script>
 
-<title>L&amp;K Homestay, Ujjain — 2BHK &amp; 3BHK Stays Near Mahakal</title>
-<meta name="description" content="Homestay in Ujjain near Mahakaleshwar Temple. Five furnished 2BHK &amp; 3BHK flats with kitchen, AC and free parking, sleeping up to 14. Call or WhatsApp to book direct.">
+<title>L&amp;K Homestay, Ujjain — 2BHK &amp; 3BHK Near Mahakal Mandir</title>
+<meta name="description" content="Homestay near Mahakal Mandir, Ujjain. Five furnished 2BHK &amp; 3BHK flats with kitchen, AC and free parking, sleeping up to 14. Call or WhatsApp to book.">
 <link rel="canonical" href="https://lkhomestay.co.in/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:site_name" content="L&amp;K Homestay">
-<meta property="og:title" content="L&amp;K Homestay, Ujjain — 2BHK &amp; 3BHK Stays Near Mahakal">
+<meta property="og:title" content="L&amp;K Homestay, Ujjain — 2BHK &amp; 3BHK Near Mahakal Mandir">
 <meta property="og:description" content="A home ten minutes from Mahakal. Five flats — 2BHK &amp; 3BHK — sleeping up to 14. Message on WhatsApp or call to book.">
 <meta property="og:image" content="https://lkhomestay.co.in/images/hero.jpg">
 <meta property="og:url" content="https://lkhomestay.co.in/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="L&amp;K Homestay, Ujjain — 2BHK &amp; 3BHK Stays Near Mahakal">
+<meta name="twitter:title" content="L&amp;K Homestay, Ujjain — 2BHK &amp; 3BHK Near Mahakal Mandir">
 <meta name="twitter:description" content="Five furnished flats near Mahakaleshwar Temple, sleeping up to 14. Call or WhatsApp to book direct.">
 <meta name="twitter:image" content="https://lkhomestay.co.in/images/hero.jpg">
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -36,6 +36,7 @@
   "@type": "LodgingBusiness",
   "@id": "https://lkhomestay.co.in/#business",
   "name": "L&K Homestay",
+  "alternateName": ["LK Homestay", "L and K Homestay", "L&K Homestay Ujjain"],
   "description": "Five independently furnished 2BHK and 3BHK flats in the heart of Ujjain, a short ride from the Mahakaleshwar Jyotirlinga, run in person by brothers Lav and Kush.",
   "url": "https://lkhomestay.co.in/",
   "telephone": "+91-73891-11152",
@@ -519,6 +520,22 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
   })();
+</script>
+
+<script>
+  /* Conversion tracking: fires a GA4 event whenever a visitor taps Call or
+     WhatsApp anywhere on the site. One delegated listener covers every button,
+     including any added later. Mark these as key events in GA4, then import
+     them into Google Ads as conversion actions. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href*="wa.me/"]');
+    if (!a || typeof gtag !== 'function') return;
+    var isCall = a.getAttribute('href').indexOf('tel:') === 0;
+    gtag('event', isCall ? 'contact_call' : 'contact_whatsapp', {
+      link_url: a.getAttribute('href'),
+      page_path: location.pathname
+    });
+  }, true);
 </script>
 </body>
 </html>
