@@ -11,3 +11,15 @@ reviews/
 images/Full_image.png
 images/full_image_night.png
 images/shivlinga photo.png
+
+# Source/unused images — not referenced by any page, so not worth deploying.
+# amneties.jpeg in particular carries personal phone numbers.
+images/1000332648.jpg
+images/amneties.jpeg
+images/logo-footer.jpg
+
+# Working analysis notes — contain ad spend, campaign strategy and account
+# data. The Pages workflow deploys the whole repo, so these must never be
+# committed or they become publicly readable.
+analysis - temp/
+*.analysis.md

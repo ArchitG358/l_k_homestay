@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,18 +15,66 @@
   gtag('config', 'AW-18284589937'); // Google Ads
 </script>
 
-<title>FAQ — L&amp;K Homestay, Ujjain</title>
-<meta name="description" content="Common questions about staying at L&amp;K Homestay in Ujjain: distance to Mahakaleshwar Temple, kitchen, parking, how many guests each flat sleeps, food delivery and how to book.">
+<title>Homestay Near Mahakal Mandir, Ujjain — Guest FAQ</title>
+<meta name="description" content="How far is Mahakal temple, can we cook, how many guests each flat sleeps, parking, and how to book — answered by the hosts of L&amp;K Homestay, Ujjain.">
 <link rel="canonical" href="https://lkhomestay.co.in/faq.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:site_name" content="L&amp;K Homestay">
-<meta property="og:title" content="FAQ — L&amp;K Homestay, Ujjain">
+<meta property="og:title" content="Homestay Near Mahakal Mandir, Ujjain — Guest FAQ">
 <meta property="og:description" content="Distance to Mahakal, kitchen, parking, guest capacity, food delivery and booking — answered.">
-<meta property="og:image" content="https://lkhomestay.co.in/images/hero.jpg">
+<meta property="og:image" content="https://lkhomestay.co.in/images/living1.jpg">
 <meta property="og:url" content="https://lkhomestay.co.in/faq.html">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="images/favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "L&K Homestay",
+      "item": "https://lkhomestay.co.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guest FAQ",
+      "item": "https://lkhomestay.co.in/faq.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Homestay Near Mahakal Mandir, Ujjain — Guest FAQ",
+  "description": "Answers to the questions guests ask most about staying at L&K Homestay in Ujjain.",
+  "image": "https://lkhomestay.co.in/images/living1.jpg",
+  "datePublished": "2026-09-29",
+  "dateModified": "2026-09-29",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lkhomestay.co.in/faq.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "L&K Homestay",
+    "url": "https://lkhomestay.co.in/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "L&K Homestay",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lkhomestay.co.in/images/logo-mark.png"
+    }
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -90,7 +138,7 @@
 
       <div class="faq-item">
         <h3>What's included in the flat?</h3>
-        <p>Air conditioning in every room, high-speed Wi-Fi, a smart TV, fresh linen and towels, toiletries, hot and cold water, a balcony, and lift access to the flat. Housekeeping is regular, and there's a caretaker on call 24/7.</p>
+        <p>Air conditioning in every room, high-speed Wi-Fi, a smart TV, fresh linen and towels, toiletries, hot and cold water, a balcony, and lift access to the flat. Housekeeping is regular, and our caretaker Mahesh is on call 24/7 &mdash; guests regularly thank him by name in their reviews.</p>
       </div>
 
       <h2>Location and getting around</h2>
@@ -207,6 +255,22 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
   })();
+</script>
+
+<script>
+  /* Conversion tracking: fires a GA4 event whenever a visitor taps Call or
+     WhatsApp anywhere on the site. One delegated listener covers every button,
+     including any added later. Mark these as key events in GA4, then import
+     them into Google Ads as conversion actions. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href*="wa.me/"]');
+    if (!a || typeof gtag !== 'function') return;
+    var isCall = a.getAttribute('href').indexOf('tel:') === 0;
+    gtag('event', isCall ? 'contact_call' : 'contact_whatsapp', {
+      link_url: a.getAttribute('href'),
+      page_path: location.pathname
+    });
+  }, true);
 </script>
 </body>
 </html>
