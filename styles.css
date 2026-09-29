@@ -566,8 +566,10 @@
 
   /* ---------- trip guides (homepage) ---------- */
   .guide-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: clamp(16px,2.5vw,24px);
+    display: grid; gap: clamp(16px,2.5vw,24px);
+    /* auto-fit so the row rebalances as guides are added, instead of
+       leaving an orphan card on a row of its own */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
   .guide-grid > * { min-width: 0; }
   .guide-card {
@@ -607,9 +609,7 @@
   .footer-nav a:hover { color: var(--maroon); border-color: var(--maroon); }
   .footer-nav .eyebrow { display: block; margin-bottom: 4px; }
 
-  @media (max-width: 860px) {
-    .guide-grid { grid-template-columns: 1fr; }
-  }
+
 
   /* ---------- top bar navigation ---------- */
   .topbar-left {
