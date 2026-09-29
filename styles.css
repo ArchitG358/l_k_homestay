@@ -686,3 +686,13 @@
     margin-top: 10px; font-size: 0.82rem; color: var(--ink-soft);
     font-family: 'IBM Plex Mono', monospace; line-height: 1.5;
   }
+
+  /* With five nav items the row scrolls on phones. Fade the right edge so the
+     last item reads as "swipe for more" rather than as clipped/broken. Applied
+     only below the width where the row stops scrolling. */
+  @media (max-width: 470px) {
+    .topbar .topnav {
+      -webkit-mask-image: linear-gradient(to right, #000 86%, transparent 100%);
+              mask-image: linear-gradient(to right, #000 86%, transparent 100%);
+    }
+  }
